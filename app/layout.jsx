@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Montserrat } from "next/font/google";
+import QueryWrapper from "./QueryWrapper";
 
 const montserrat = Montserrat({
   weight: ["400", "700"],
@@ -15,7 +16,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} p-20`}>{children}</body>
+      <body className={`${montserrat.className} p-20`}>
+        <QueryWrapper>{children}</QueryWrapper>
+      </body>
     </html>
   );
 }
